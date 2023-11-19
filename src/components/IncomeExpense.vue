@@ -3,6 +3,8 @@ const props = defineProps({
     incomes: { type: Number, required: true },
     expenses: { type: Number, required: true },
 });
+
+const formattedExpenses = (expense) => Math.abs(expense);
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const props = defineProps({
         
         <div>
             <h4>Expense</h4>
-            <p id="money-minus" class="money minus">-${{ Math.abs(expenses) }}</p>
+            <p id="money-minus" class="money minus">-${{ formattedExpenses(expenses) }}</p>
         </div>
     </div>
 </template>
